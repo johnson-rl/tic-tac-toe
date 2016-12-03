@@ -5,4 +5,14 @@
 .box {
   border: 1px solid black;
   height: 150px;
+  font-size: 100px;
+  text-align: center;
+}
+
+.box:hover {
+  background-color: lightgray;
+}
+
+.btn {
+  margin-top: 10px;
 }
