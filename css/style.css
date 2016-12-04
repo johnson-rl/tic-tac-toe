@@ -1,5 +1,22 @@
+.show {
+  background-color: blue;
+  color: white;
+}
+
+.removebackground {
+  background-color: white;
+}
+
 #board {
   margin-top: 10px;
+}
+
+.height {
+  min-height: 150px;
+}
+
+.hidden{
+  visibility: hidden;
 }
 
 .box {
@@ -20,6 +37,38 @@
 
 .playedX {
   background-color: lightblue;
+}
+
+.playedgreen {
+  background-color: lightgreen;
+}
+
+.playedblue {
+  background-color: lightblue;
+}
+
+.playedOblue {
+  background-color: lightgreen;
+}
+
+.playedXgreen {
+  background-color: lightblue;
+}
+
+.playedpink {
+  background-color: pink;
+}
+
+.playedOpink {
+  background-color: pink;
+}
+
+.playedred {
+  background-color: red;
+}
+
+.playedOred {
+  background-color: red;
 }
 
 .btn {
