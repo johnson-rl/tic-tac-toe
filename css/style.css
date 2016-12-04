@@ -7,12 +7,25 @@
   height: 150px;
   font-size: 100px;
   text-align: center;
+  background-color: white;
 }
 
-.box:hover {
+.one:hover, .two:hover, .three:hover, .four:hover, .five:hover, .six:hover, .seven:hover, .eight:hover, .nine:hover {
   background-color: lightgray;
+}
+
+.playedO {
+  background-color: lightgreen;
+}
+
+.playedX {
+  background-color: lightblue;
 }
 
 .btn {
   margin-top: 10px;
+}
+
+body {
+  background-color: rgba(164, 184, 216, .25);
 }
