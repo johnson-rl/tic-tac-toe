@@ -1,7 +1,15 @@
 console.log('javasctipt is loaded')
 var userTurn = 'X';
-var boxesX = [];
-var boxesO = [];
+var boxesX = ['X'];
+var boxesO = ['O'];
+var winners = [['one','two','three'],
+              ['four','five','six'],
+              ['seven','eight','nine'],
+              ['one','five','nine'],
+              ['three','five','seven'],
+              ['one','four','seven'],
+              ['two','five','eight'],
+              ['three','six','nine']]
 
 function makeMove(event){
   var elementClass = ($(this).attr('class').split(' '));
@@ -27,13 +35,31 @@ function makeMove(event){
       $(this).attr('class',elementClass.join(' ') + ' playedX');
       userTurn='O';
     }
-    // checkWinner();
+    checkWinner(boxesX);
+    checkWinner(boxesO);
     console.log('the user took a turn')
   }
 }
 
-function checkWiner(){
+function checkWinner(player){
+  for (var i=0;i<8;i++){
+    var winTotal = 0;
+    for (var j=0;j<3;j++){
+      if(player.indexOf(winners[i][j])>0){
+        winTotal++;
+      }
+      if (winTotal===3){
+        declareWinner(player[0]);
+      }
+    }
+  }
+}
 
+function declareWinner(winner){
+  console.log('winner');
+  $('.hidden').attr('class','show');
+  $('.container').attr('class','hidden');
+  $('.show').text('The Winner is '+winner+'!');
 }
 
 function resetGame(event){
