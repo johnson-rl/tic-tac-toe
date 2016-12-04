@@ -63,11 +63,12 @@ function declareWinner(winner){
 }
 
 function resetGame(event){
-  $('.box').text('');
-  console.log("The game has been reset");
-  userTurn = 'X';
-  boxesX = [];
-  boxesO = [];
+  // $('.box').text('');
+  // console.log("The game has been reset");
+  // userTurn = 'X';
+  // boxesX = [];
+  // boxesO = [];
+  location.reload()
 }
 // wait for the DOM to finish loading
 $(document).ready(function() {
