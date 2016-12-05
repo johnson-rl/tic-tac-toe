@@ -1,8 +1,3 @@
-.show {
-  background-color: blue;
-  color: white;
-}
-
 .removebackground {
   background-color: white;
 }
@@ -11,8 +6,12 @@
   margin-top: 10px;
 }
 
+.modal {
+  background-color: rgba(75, 118, 188, .75) !important;
+}
+
 .height {
-  min-height: 150px;
+  font-size: 250px;
 }
 
 .hidden{
@@ -28,7 +27,7 @@
 }
 
 .one:hover, .two:hover, .three:hover, .four:hover, .five:hover, .six:hover, .seven:hover, .eight:hover, .nine:hover {
-  background-color: lightgray;
+  background-color: rgba(80, 47, 153,.1);
 }
 
 .playedgreen {
@@ -51,6 +50,21 @@
   margin-top: 10px;
 }
 
-body .modal-backdrop {
-  background-color: rgba(164, 184, 216, .25);
+.winner, h6, h1, .show {
+  text-align: center;
+  color: white;
+  text-shadow:
+  -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
+}
+
+.starting-color {
+  background-color: rgba(75, 118, 188, .5);
+}
+
+.cat-class {
+  background-image: url(cats-game-1.jpg);
+  background-size: 100% auto;
 }

@@ -20,7 +20,7 @@
 
     <title>Tic Tac Toe</title>
   </head>
-  <body>
+  <body class="starting-color">
     <div class="container">
       <!-- Button trigger modal -->
     <!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
@@ -28,33 +28,33 @@
     </button> -->
 
     <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h3 class="modal-title" id="myModalLabel">Choose your color!</h3>
-          </div>
-          <div class="modal-body">
-            <h4>Choose a color for X:</h4>
-            <button type="button" id='red' class="btn btn-default playedred">Red</button>
-            <button type="button" id='blue' class="btn btn-default playedblue">Blue</button>
-            <button type="button" id='green' class="btn btn-default playedgreen">Green</button>
-            <button type="button" id='pink' class="btn btn-default playedpink">Pink</button>
-          </div>
-          <div class="modal-body">
-            <h4>Choose a color for O:</h4>
-            <button type="button" id='Ored' class="btn btn-default playedred">Red</button>
-            <button type="button" id='Oblue' class="btn btn-default playedblue">Blue</button>
-            <button type="button" id='Ogreen' class="btn btn-default playedgreen">Green</button>
-            <button type="button" id='Opink' class="btn btn-default playedpink">Pink</button>
-          </div>
-          <div class="modal-footer">
-            <button type="button" id='pink' class="btn btn-default" data-dismiss="modal">Submit</button>
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 class="modal-title" id="myModalLabel">Choose your color!</h3>
+            </div>
+            <div class="modal-body">
+              <h4>Choose a color for X:</h4>
+              <button type="button" id='red' class="btn btn-default playedred">Red</button>
+              <button type="button" id='blue' class="btn btn-default playedblue">Blue</button>
+              <button type="button" id='green' class="btn btn-default playedgreen">Green</button>
+              <button type="button" id='pink' class="btn btn-default playedpink">Pink</button>
+            </div>
+            <div class="modal-body">
+              <h4>Choose a color for O:</h4>
+              <button type="button" id='Ored' class="btn btn-default playedred">Red</button>
+              <button type="button" id='Oblue' class="btn btn-default playedblue">Blue</button>
+              <button type="button" id='Ogreen' class="btn btn-default playedgreen">Green</button>
+              <button type="button" id='Opink' class="btn btn-default playedpink">Pink</button>
+            </div>
+            <div class="modal-footer">
+              <button type="button" id='pink' class="btn btn-primary" data-dismiss="modal"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
       <div class="row text-center">
         <div class="col-md-12">
           <h1>Tic Tac Toe</h1>
@@ -63,39 +63,46 @@
       </div>
       <div class="row">
 
-        <!-- a column represents our game board -->
-        <!-- the `offset` class helps us center the board -->
-        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2" id="board">
-
-          <!-- you can put rows inside of columns! -->
-          <!-- Bootstrap subdivides these 'nested' rows into 12 columns, too! -->
-          <div class="row">
-            <div class="col-xs-4 box one"></div>
-            <div class="col-xs-4 box two"></div>
-            <div class="col-xs-4 box three"></div>
-          </div>
-          <div class="row">
-            <div class="col-xs-4 box four"></div>
-            <div class="col-xs-4 box five"></div>
-            <div class="col-xs-4 box six"></div>
-          </div>
-          <div class="row">
-            <div class="col-xs-4 box seven"></div>
-            <div class="col-xs-4 box eight"></div>
-            <div class="col-xs-4 box nine"></div>
-          </div>
         </div>
-        <button type="button" class="row btn btn-info btn-lg col-xs-4 col-xs-offset-4 reset">Reset</button>
+          <!-- a column represents our game board -->
+          <!-- the `offset` class helps us center the board -->
+          <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2" id="board">
+
+            <!-- you can put rows inside of columns! -->
+            <!-- Bootstrap subdivides these 'nested' rows into 12 columns, too! -->
+            <div class="row">
+              <div class="col-xs-4 box one"></div>
+              <div class="col-xs-4 box two"></div>
+              <div class="col-xs-4 box three"></div>
+            </div>
+            <div class="row">
+              <div class="col-xs-4 box four"></div>
+              <div class="col-xs-4 box five"></div>
+              <div class="col-xs-4 box six"></div>
+            </div>
+            <div class="row">
+              <div class="col-xs-4 box seven"></div>
+              <div class="col-xs-4 box eight"></div>
+              <div class="col-xs-4 box nine"></div>
+            </div>
+          </div>
+          <!-- <button type="button" class="row btn btn-info btn-lg col-xs-4 col-xs-offset-4 reset">Reset</button> -->
+        <!-- <div class="row"><h1>It's your turn, <span class='turn'>X</span></h1></div>   -->
+      </div>
+      <div class="row turn-tracker"><h1>It's your turn, <span class='turn'></span></h1></div>
+    </div>
+    <div class="hidden win">
+      <div class="row">
+        <h1 class="col-xs-12">The Winner Is</h1>
+      </div>
+      <div class="row">
+        <h1 class="winner col-sm-12 height"></h1>
       </div>
     </div>
-    <div class="hidden">
-      <div class="row">
-        <div class="col-xs-12 height"</div>
-      </div>
-      <div class="row">
-        <h1 class="winner col-sm-12"></h1>
-      </div>
+    <div class="hidden cats">
+      <h1>Oh No!  It's a Cat's Game!</h1>
+      <h6>Juniper doesn't look impressed.  Better try again.</h6>
     </div>
-    <button type="button" class="row btn btn-info btn-lg col-xs-4 col-xs-offset-4 reset">Reset</button>
+    <button type="button" class="row btn btn-primary btn-lg col-xs-4 col-xs-offset-4 reset">Play Again</button>
   </body>
 </html>

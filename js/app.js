@@ -10,8 +10,8 @@ var winners = [['one','two','three'],
               ['one','four','seven'],
               ['two','five','eight'],
               ['three','six','nine']]
-var playedX
-var playedO = 0
+var playedX = ' playedgreen'
+var playedO = ' playedred'
 
 function makeMove(event){
   var elementClass = ($(this).attr('class').split(' '));
@@ -24,7 +24,7 @@ function makeMove(event){
   // if (whichBox !="playedX"){
   //   console.log("playedX working")
   // }
-  if (((whichBox !="playedO")&&(whichBox !="playedX"))){
+  if ((((' '+whichBox) != playedO)&&((' '+whichBox) != playedX))){
     // debugger;
     console.log(whichBox);
     $(this).text(userTurn);
@@ -39,8 +39,18 @@ function makeMove(event){
     }
     checkWinner(boxesX);
     checkWinner(boxesO);
+    if (boxesO.length+boxesX.length === 11){catsGame()}
+    $('.turn').text(userTurn)
     console.log('the user took a turn')
   }
+}
+
+function catsGame(){
+  console.log("it's a cat's game");
+  $('.starting-color').attr('class','cat-class');
+  $('.container').attr('class','hidden');
+  $('.cats').attr('class','cats');
+  $('.turn-tracker').attr('class','hidden');
 }
 
 function checkWinner(player){
@@ -59,9 +69,16 @@ function checkWinner(player){
 
 function declareWinner(winner){
   console.log('winner');
-  $('.hidden').attr('class','show');
-  $('.container').attr('class','hidden removebackground');
-  $('.winner').text('The Winner is '+winner+'!');
+  $('.win').attr('class','show');
+  $('.container').attr('class','hidden');
+  $('.turn-tracker').attr('class','hidden');
+  if (winner==='X'){
+    $('.starting-color').attr('class', playedX);
+  } else {
+    $('.starting-color').attr('class', playedO);
+  }
+  // $('.winnerone').text('The Winner is');
+  $('.winner').text(winner);
 }
 
 function resetGame(event){
@@ -73,13 +90,13 @@ function resetGame(event){
   location.reload()
 }
 
-function choosePlayer(player){
-  $('#myModal').modal('show');
-  $('#red').on('click', function(){player =' playedred'}); //not sure why I can't use function with arguments
-  $('#blue').on('click', function(){player =' playedblue'});
-  $('#pink').on('click', function(){player =' playedpink'});
-  $('#green').on('click', function(){player =' playedgreen'});
-}
+// function choosePlayer(player){
+//   $('#myModal').modal('show');
+//   $('#red').on('click', function(){player =' playedred'}); //not sure why I can't use function with arguments
+//   $('#blue').on('click', function(){player =' playedblue'});
+//   $('#pink').on('click', function(){player =' playedpink'});
+//   $('#green').on('click', function(){player =' playedgreen'});
+// }
 
 function playerSet(player,color){
   return player = color;
@@ -104,10 +121,10 @@ $(document).ready(function() {
   // while(!playedO){
   //     if (!playedX){
       $('#myModal').modal('show');
-      $('#red').on('click', function(){playedX =' playedred';choosePlayer(playedO);}); //not sure why I can't use function with arguments
-      $('#blue').on('click', function(){playedX =' playedblue';choosePlayer(playedO);});
-      $('#pink').on('click', function(){playedX =' playedpink';choosePlayer(playedO);});
-      $('#green').on('click', function(){playedX =' playedgreen';choosePlayer(playedO);});
+      $('#red').on('click', function(){playedX =' playedred'}); //not sure why I can't use function with arguments
+      $('#blue').on('click', function(){playedX =' playedblue'});
+      $('#pink').on('click', function(){playedX =' playedpink'});
+      $('#green').on('click', function(){playedX =' playedgreen'});
     // } else {
       // $('#myModal').modal('show');
       $('#Ored').on('click', function(){playedO =' playedred'});
@@ -118,6 +135,4 @@ $(document).ready(function() {
   // }
   $('#board').on('click','.box', makeMove);
   $('.reset').on('click',resetGame)
-
-
 });
