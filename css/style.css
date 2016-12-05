@@ -1,21 +1,5 @@
-.removebackground {
-  background-color: white;
-}
-
 #board {
   margin-top: 10px;
-}
-
-.modal {
-  background-color: rgba(75, 118, 188, .75) !important;
-}
-
-.height {
-  font-size: 250px;
-}
-
-.hidden{
-  visibility: hidden;
 }
 
 .box {
@@ -26,16 +10,37 @@
   background-color: white;
 }
 
+.btn {
+  margin-top: 10px;
+}
+
+.cat-class {
+  background-image: url(cats-game-1.jpg);
+  background-size: 100% auto;
+}
+
+.height {
+  font-size: 250px;
+}
+
+.hidden{
+  visibility: hidden;
+}
+
+.modal {
+  background-color: rgba(75, 118, 188, .75)
+}
+
 .one:hover, .two:hover, .three:hover, .four:hover, .five:hover, .six:hover, .seven:hover, .eight:hover, .nine:hover {
   background-color: rgba(80, 47, 153,.1);
 }
 
-.playedgreen {
-  background-color: lightgreen;
-}
-
 .playedblue {
   background-color: lightblue;
+}
+
+.playedgreen {
+  background-color: lightgreen;
 }
 
 .playedpink {
@@ -46,8 +51,8 @@
   background-color: rgba(255,0,0,.7);
 }
 
-.btn {
-  margin-top: 10px;
+.starting-color {
+  background-color: rgba(75, 118, 188, .5);
 }
 
 .winner, h6, h1, .show {
@@ -58,13 +63,4 @@
   1px -1px 0 #000,
   -1px 1px 0 #000,
   1px 1px 0 #000;
-}
-
-.starting-color {
-  background-color: rgba(75, 118, 188, .5);
-}
-
-.cat-class {
-  background-image: url(cats-game-1.jpg);
-  background-size: 100% auto;
 }
