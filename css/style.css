@@ -31,14 +31,6 @@
   background-color: lightgray;
 }
 
-.playedO {
-  background-color: lightgreen;
-}
-
-.playedX {
-  background-color: lightblue;
-}
-
 .playedgreen {
   background-color: lightgreen;
 }
@@ -47,34 +39,18 @@
   background-color: lightblue;
 }
 
-.playedOblue {
-  background-color: lightgreen;
-}
-
-.playedXgreen {
-  background-color: lightblue;
-}
-
 .playedpink {
   background-color: pink;
 }
 
-.playedOpink {
-  background-color: pink;
-}
-
 .playedred {
-  background-color: red;
-}
-
-.playedOred {
-  background-color: red;
+  background-color: rgba(255,0,0,.7);
 }
 
 .btn {
   margin-top: 10px;
 }
 
-body {
+body .modal-backdrop {
   background-color: rgba(164, 184, 216, .25);
 }

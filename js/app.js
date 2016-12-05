@@ -11,7 +11,7 @@ var winners = [['one','two','three'],
               ['two','five','eight'],
               ['three','six','nine']]
 var playedX
-var playedO
+var playedO = 0
 
 function makeMove(event){
   var elementClass = ($(this).attr('class').split(' '));
@@ -30,7 +30,7 @@ function makeMove(event){
     $(this).text(userTurn);
     if(userTurn ==='O'){
       boxesO.push(whichBox);
-      $(this).attr('class',elementClass.join(' ') + ' playedO');
+      $(this).attr('class',elementClass.join(' ') + playedO);
       userTurn='X';
     } else {
       boxesX.push(whichBox);
@@ -74,13 +74,11 @@ function resetGame(event){
 }
 
 function choosePlayer(player){
-  $('#myModal').modal('toggle');
-  $('#red').on('click', declareWinner);
-  $('#blue').on('click', declareWinner);
-  // $('#red').on('click', playerSet(player, 'playedred'));
-  // $('#blue').on('click', playerSet(player, ' playedlightblue'));
-  // $('#green').on('click', playerSet(player, ' playedlightgreen'));
-  // $('#pink').on('click', playerSet(player, ' playedpink'));
+  $('#myModal').modal('show');
+  $('#red').on('click', function(){player =' playedred'}); //not sure why I can't use function with arguments
+  $('#blue').on('click', function(){player =' playedblue'});
+  $('#pink').on('click', function(){player =' playedpink'});
+  $('#green').on('click', function(){player =' playedgreen'});
 }
 
 function playerSet(player,color){
@@ -102,14 +100,24 @@ $(document).ready(function() {
   //   $('#board').on('click','.box', makeMove);
   //   $('.btn').on('click',resetGame);
   // }
-  $('#myModal').modal('toggle');
-  $('#red').on('click', function(){playedX =' playedred'}); //not sure why I can't use function with arguments
-  $('#blue').on('click', function(){playedX =' playedblue'});
-  $('#pink').on('click', function(){playedX =' playedpink'});
-  $('#green').on('click', function(){playedX =' playedgreen'});
-  $('#board').on('click','.box', makeMove);
-  $('.reset-button').on('click',resetGame)
-  // choosePlayer(playedX);
   // choosePlayer(playedO);
+  // while(!playedO){
+  //     if (!playedX){
+      $('#myModal').modal('show');
+      $('#red').on('click', function(){playedX =' playedred';choosePlayer(playedO);}); //not sure why I can't use function with arguments
+      $('#blue').on('click', function(){playedX =' playedblue';choosePlayer(playedO);});
+      $('#pink').on('click', function(){playedX =' playedpink';choosePlayer(playedO);});
+      $('#green').on('click', function(){playedX =' playedgreen';choosePlayer(playedO);});
+    // } else {
+      // $('#myModal').modal('show');
+      $('#Ored').on('click', function(){playedO =' playedred'});
+      $('#Oblue').on('click', function(){playedO =' playedblue'});
+      $('#Opink').on('click', function(){playedO =' playedpink'});
+      $('#Ogreen').on('click', function(){playedO =' playedgreen'});
+  //   }
+  // }
+  $('#board').on('click','.box', makeMove);
+  $('.reset').on('click',resetGame)
+
 
 });
